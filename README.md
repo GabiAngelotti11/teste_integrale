@@ -59,15 +59,6 @@
 
   Endpoint: `https://viacep.com.br/ws/{cep}/json/`
 
- Estrutura do Projeto
-
-
-teste_integrale/
-├── index.html           Página principal
-├── style.css            Estilos CSS
-├── script.js            Lógica JavaScript
-└── README.md            Documentação
-
   Características do Design
 
 - Gradiente Moderno: Fundo com gradiente roxo/azul
