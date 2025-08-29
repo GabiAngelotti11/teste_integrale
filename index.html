@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP teste INTEGRALE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Consulta de CEP</h1>
+            <p>Digite um CEP para obter informações do endereço</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="cepInput" 
+                        placeholder="Digite o CEP (ex: 01310-100 ou 01310100)"
+                        maxlength="9"
+                    >
+                    <button id="searchBtn" type="button">
+                        <span class="btn-text">Consultar</span>
+                        <span class="loading-spinner" style="display: none;"></span>
+                    </button>
+                </div>
+                <div class="error-message" id="errorMessage" style="display: none;"></div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>Informações do Endereço</h2>
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="label">CEP:</span>
+                        <span class="value" id="cepResult"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Logradouro:</span>
+                        <span class="value" id="logradouroResult"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Bairro:</span>
+                        <span class="value" id="bairroResult"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Cidade:</span>
+                        <span class="value" id="cidadeResult"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">UF:</span>
+                        <span class="value" id="ufResult"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">DDD:</span>
+                        <span class="value" id="dddResult"></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Dados fornecidos pela <a href="https://viacep.com.br/" target="_blank">API ViaCEP</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

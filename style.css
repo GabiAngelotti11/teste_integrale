@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONTE PERSONALIZADA */
+/* Carregamento da fonte Masicu-Black do diretório local */
+@font-face {
+    font-family: 'Masicu-Black';
+    src: url(/fonte_masicu/Masicu-Black.ttf);
+}
+
+
+/* ESTILOS GERAIS DO BODY */
+/* Configuração do fundo com gradiente e centralização do conteúdo */
+body {
+    font-family: 'Masicu-Black';
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+/* Card principal com fundo branco, sombra e bordas arredondadas */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* CABEÇALHO */
+/* Seção do cabeçalho com título e descrição */
+header {
+    margin-bottom: 40px;
+}
+
+/* Título principal da aplicação */
+header h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Descrição/subtítulo */
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* SEÇÃO DE BUSCA */
+/* Container da área de busca com input e botão */
+.search-section {
+    margin-bottom: 40px;
+}
+
+/* Grupo de elementos (input + botão) com flexbox */
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CAMPO DE INPUT DO CEP */
+/* Estilização do campo de entrada do CEP */
+#cepInput {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Estado de foco do input - destaque azul */
+#cepInput:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Estado de erro do input - destaque vermelho */
+#cepInput.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* BOTÃO DE CONSULTA */
+/* Estilização do botão principal com gradiente e efeitos hover */
+#searchBtn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+/* Efeito hover do botão - elevação e sombra */
+#searchBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Efeito active do botão - retorna à posição original */
+#searchBtn:active {
+    transform: translateY(0);
+}
+
+/* Estado desabilitado do botão - opacidade reduzida */
+#searchBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* SPINNER DE CARREGAMENTO */
+/* Animação de loading circular no botão */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ANIMAÇÕES */
+/* Animação de rotação para o spinner de loading */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* MENSAGEM DE ERRO */
+/* Estilização da mensagem de erro com fundo vermelho claro */
+.error-message {
+    background: #fee;
+    color: #e74c3c;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #fcc;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+/* Animação de entrada da mensagem de erro - desliza de cima para baixo */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SEÇÃO DE RESULTADOS */
+/* Container dos resultados com animação de entrada */
+.result-section {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animação de entrada dos resultados - fade in com movimento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título da seção de resultados */
+.result-section h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* CARD DE RESULTADOS */
+/* Container dos dados do endereço com fundo cinza claro */
+.result-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #e9ecef;
+}
+
+/* ITENS DE RESULTADO */
+/* Cada linha de informação do endereço */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Remove a borda do último item */
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* LABEL DOS CAMPOS */
+/* Rótulo de cada campo (CEP, Logradouro, etc.) */
+.label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 1rem;
+}
+
+/* VALOR DOS CAMPOS */
+/* Valor de cada campo do endereço */
+.value {
+    color: #333;
+    font-size: 1rem;
+    text-align: right;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+/* RODAPÉ */
+/* Seção inferior com informações da API */
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Link do rodapé - cor azul */
+footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Efeito hover do link - sublinhado */
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVIDADE */
+/* Media queries para dispositivos móveis e tablets */
+
+/* Tablets e dispositivos médios (até 768px) */
+@media (max-width: 768px) {
+    /* Reduz padding do container principal */
+    .container {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    /* Reduz tamanho do título */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Empilha input e botão verticalmente */
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Remove largura mínima do input */
+    #cepInput {
+        min-width: auto;
+    }
+
+    /* Botão ocupa toda a largura */
+    #searchBtn {
+        width: 100%;
+    }
+
+    /* Empilha label e valor verticalmente */
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* Valor alinhado à esquerda e ocupa toda largura */
+    .value {
+        text-align: left;
+        max-width: 100%;
+    }
+}
+
+/* Dispositivos móveis pequenos (até 480px) */
+@media (max-width: 480px) {
+    /* Reduz ainda mais o padding do container */
+    .container {
+        padding: 20px 15px;
+    }
+
+    /* Título ainda menor para telas pequenas */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Reduz tamanho da descrição */
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Reduz padding do card de resultados */
+    .result-card {
+        padding: 20px;
+    }
+}
